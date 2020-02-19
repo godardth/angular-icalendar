@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "angular-icalendar": [
+        "dist/angular-icalendar"
+      ],
+      "angular-icalendar/*": [
+        "dist/angular-icalendar/*"
+      ]
+    }
   }
 }
