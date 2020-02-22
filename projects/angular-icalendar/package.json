@@ -1,6 +1,17 @@
 {
   "name": "angular-icalendar",
-  "version": "0.0.7",
+  "version": "0.0.8",
+  "description": "Parser for iCalendar written for Angular.",
+  "keywords": ["icalendar", "ics", "angular", "parser", "calendar", "ical"],
+  "homepage": "https://github.com/godardth/angular-icalendar",
+  "bugs": "https://github.com/godardth/angular-icalendar/issues",
+  "author": {
+    "name": "Theophile Godard"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/godardth/angular-icalendar.git"
+  },
   "peerDependencies": {
     "moment": "^2.24.0"
   },

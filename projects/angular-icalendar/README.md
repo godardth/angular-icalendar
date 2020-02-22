@@ -1,24 +1,45 @@
-# AngularIcalendar
+# angular-icalendar
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.2.14.
+Parser for iCalendar written for Angular. This package is under development and should not be used in production.
 
-## Code scaffolding
+## Dependencies
 
-Run `ng generate component component-name --project angular-icalendar` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project angular-icalendar`.
-> Note: Don't forget to add `--project angular-icalendar` or else it will be added to the default project in your `angular.json` file. 
+- Angular (Tested with Angular v7)
+- moment (Tested with Moment v2.24.0)
 
-## Build
+## Installation
 
-Run `ng build angular-icalendar` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `npm install angular-icalendar` to install.
 
-## Publishing
+## Usage
 
-After building your library with `ng build angular-icalendar`, go to the dist folder `cd dist/angular-icalendar` and run `npm publish`.
+In your xxx.module.ts file :
+```
+import { AngularIcalendarModule } from 'angular-icalendar';
+...
+@NgModule({
+  imports: [
+    ...,
+    AngularIcalendarModule,
+    ...
+  ],
+```
 
-## Running unit tests
+In your xxx.component.ts file :
+```
+import { AngularIcalendarService } from 'angular-icalendar';
+...
+export class CalendarsComponent implements OnInit {
 
-Run `ng test angular-icalendar` to execute the unit tests via [Karma](https://karma-runner.github.io).
+  constructor(
+    private icalendar: AngularIcalendarService
+  ) {}
 
-## Further help
+  sampleFunction(): void {
+    let parsedCal = this.icalendar.parseCalendar(ics_string);
+  }
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## Contributing
+
+Feel free to create pull request.
