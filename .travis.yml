@@ -3,3 +3,13 @@ node_js:
 - node
 script:
 - npm run build-ci
+before_deploy:  
+- cd dist/angular-icalendar
+deploy:
+  provider: npm
+  email: theo.godard@gmail.com
+  skip_cleanup: true
+  api_key:
+    secure: DB6vqZNOpvlmr+Fu5c+XgDZ8kg8KCQJZzo7ZzS7vgoCOQmrj048nV7WOGrc5Bt5K/JywbLrFr88OwODlzjweq2juqJhq5Y3LjxIclx+cdyofxk9dY1hOA4XVZ3uyquYAr6qO+9eh9K5KTzHtuKfUBMq0fMswGFTOJDMwslg0oBoDNHjmSAf9v2fRGAz0HmI0dof/VCnIvEQ71ArVGzdBt+U+lIbLj2UUvHV46dN6ZDdYBEw0mwR1m3Gcd/iO7o3X7uNp0RArAHZ5MHr4+Xh5LpIFRFj2dIZVg0eoowVPrYS8BXbVxEVG3cD3f/utdJiRtzwQRDO7+DDfl1kfg8THXLUE6p9D8TW/Twlzt/+iJs7oCuA1UUwAx/HBuNGChGrXtrtAE+WIwyrelsOlbSh75Ckcq2l7MHTz96PAV6LLUh91JF1Ommo6DXm8q9qJNE0yal/Vr0TNLyGraGB8B1sLNP2hJzywzrRzb1rbM6T9MgIIxH1lVTeYP9RcP22evQK2FqYXDOXRFds6vePNqf+v2o14fzip8+pgmViNOKsCE4UAKx3xr4Dj46rBXa7sXxiknVGHSjS9xmvOALFPHgTHOtrVualPF8NJZXNw95LfuqmhQWhdRa0tWCH+rtLmR/UonqgOcVIvkUelreJAQEB0Ytjy24AMs4zcQUN9GiD2nAs=
+  on:
+    repo: godardth/angular-icalendar
