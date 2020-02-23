@@ -36,7 +36,7 @@ export class CalendarsComponent implements OnInit {
   ) {}
 
   sampleFunction(): void {
-    let parsedCal = this.icalendar.parseCalendar(ics_string);
+    let parsedCal = this.icalendar.parseICS(ics_string);
   }
 ```
 

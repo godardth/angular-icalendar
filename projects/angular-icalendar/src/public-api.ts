@@ -3,5 +3,4 @@
  */
 
 export * from './lib/angular-icalendar.service';
-export * from './lib/angular-icalendar.component';
 export * from './lib/angular-icalendar.module';
