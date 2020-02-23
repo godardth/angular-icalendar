@@ -30,6 +30,12 @@ abstract class CalendarObject {
           case 'VEVENT':
             this.addChildren('VEVENT', new Event(childIcsString));
             break;
+          case 'VJOURNAL':
+            this.addChildren('VJOURNAL', new Journal(childIcsString));
+            break;
+          case 'VTODO':
+            this.addChildren('VTODO', new Todo(childIcsString));
+            break;
           case 'VALARM':
             this.addChildren('VALARM', new Alarm(childIcsString));
             break;
@@ -121,6 +127,39 @@ abstract class EventTodoJournalComponent extends CalendarObject {
 
 }
 
+abstract class EventTodoComponent extends EventTodoJournalComponent {
+  duration: any;
+  geo: any;
+  location: any;
+  priority: any;
+  resources: Array<any>;
+  alarm: Array<any>;
+
+  constructor() {
+    super();
+    this.resources = new Array();
+    this.alarm = new Array();
+  }
+
+  setProperty(property: string, value: any) {
+    super.setProperty(property, value);
+    switch (property) {
+      case 'PRIORITY':
+        this.priority = value;
+        break;
+    }
+  }
+
+  addChildren(cls: string, object: any) {
+    switch (cls) {
+      case 'VALARM':
+        this.alarm.push(object);
+        break;
+    }
+  }
+
+}
+
 export class Alarm extends CalendarObject {
   action: string;
   attach: string;
@@ -153,42 +192,64 @@ export class Alarm extends CalendarObject {
 
 }
 
-export class Event extends EventTodoJournalComponent {
+export class Event extends EventTodoComponent {
   dtend: any;
-  duration: any;
-  geo: any;
-  location: any;
-  priority: any;
-  resources: Array<any>;
   transp: any;
-  alarm: Array<any>;
 
   constructor(icsString: string) {
     super();
-    this.resources = new Array();
-    this.alarm = new Array();
     this.selfParse(icsString);
   }
 
   setProperty(property: string, value: any) {
     super.setProperty(property, value);
     switch (property) {
-      case 'PRIORITY':
-        this.priority = value;
-        break;
       case 'DTEND':
         this.dtend = moment(value);
+        break;
+      case 'TRANSP':
+        this.transp = value;
         break;
     }
   }
 
-  addChildren(cls: string, object: any) {
-    switch (cls) {
-      case 'VALARM':
-        this.alarm.push(object);
+}
+
+export class Todo extends EventTodoComponent {
+  completed: boolean;
+  due: any;
+  percent: any;
+
+  constructor(icsString: string) {
+    super();
+    this.selfParse(icsString);
+  }
+
+  setProperty(property: string, value: any) {
+    super.setProperty(property, value);
+    switch (property) {
+      case 'COMPLETED':
+        this.completed = value;
+        break;
+      case 'DUE':
+        this.due = moment(value);
+        break;
+      case 'PERCENT':
+        this.percent = value;
         break;
     }
   }
+
+}
+
+export class Journal extends EventTodoJournalComponent {
+
+  constructor(icsString: string) {
+    super();
+    this.selfParse(icsString);
+  }
+
+  addChildren(cls: string, object: any) {}
 
 }
 
