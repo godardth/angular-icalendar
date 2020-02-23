@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/godardth/angular-icalendar.svg?branch=master)](https://travis-ci.com/godardth/angular-icalendar)
+[![Build Status](https://travis-ci.com/godardth/angular-icalendar.svg?branch=master)](https://travis-ci.com/godardth/angular-icalendar) [![npm version](https://badge.fury.io/js/angular-icalendar.svg)](https://badge.fury.io/js/angular-icalendar)
 
 # angular-icalendar
 
