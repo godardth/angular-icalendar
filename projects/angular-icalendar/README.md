@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/godardth/angular-icalendar.svg?branch=master)](https://travis-ci.com/godardth/angular-icalendar)
+
 # angular-icalendar
 
 Parser for iCalendar written for Angular. This package is under development and should not be used in production.
