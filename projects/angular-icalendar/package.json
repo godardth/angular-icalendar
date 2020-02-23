@@ -1,6 +1,6 @@
 {
   "name": "angular-icalendar",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Parser for iCalendar written for Angular.",
   "keywords": ["icalendar", "ics", "angular", "parser", "calendar", "ical"],
   "homepage": "https://github.com/godardth/angular-icalendar",

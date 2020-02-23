@@ -27,16 +27,16 @@ import { AngularIcalendarModule } from 'angular-icalendar';
 
 In your xxx.component.ts file :
 ```
-import { AngularIcalendarService } from 'angular-icalendar';
+import { IcsParserService } from 'angular-icalendar';
 ...
 export class CalendarsComponent implements OnInit {
 
   constructor(
-    private icalendar: AngularIcalendarService
+    private icsParser: IcsParserService
   ) {}
 
   sampleFunction(): void {
-    let parsedCal = this.icalendar.parseICS(ics_string);
+    let parsedCal = this.icsParser.parseICS(ics_string);
   }
 ```
 

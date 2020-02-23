@@ -5,7 +5,7 @@ import { Calendar } from './models';
 
 
 @Injectable()
-export class AngularIcalendarService {
+export class IcsParserService {
 
   parseICS(ics: string): Calendar {
     return new Calendar(ics);

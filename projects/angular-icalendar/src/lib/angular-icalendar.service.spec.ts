@@ -1,12 +1,15 @@
 import { TestBed } from '@angular/core/testing';
 
-import { AngularIcalendarService } from './angular-icalendar.service';
+import { IcsParserService } from './angular-icalendar.service';
 
-describe('AngularIcalendarService', () => {
-  beforeEach(() => TestBed.configureTestingModule({}));
+describe('IcsParserService', () => {
+
+  beforeEach(() => TestBed.configureTestingModule({
+    providers: [IcsParserService]
+  }));
 
   it('should be created', () => {
-    const service: AngularIcalendarService = TestBed.get(AngularIcalendarService);
+    const service: IcsParserService = TestBed.get(IcsParserService);
     expect(service).toBeTruthy();
   });
 });

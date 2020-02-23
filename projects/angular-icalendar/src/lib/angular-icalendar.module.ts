@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { AngularIcalendarService } from './angular-icalendar.service';
+import { IcsParserService } from './angular-icalendar.service';
 
 
 @NgModule({
@@ -9,7 +9,7 @@ import { AngularIcalendarService } from './angular-icalendar.service';
     HttpClientModule
   ],
   providers: [
-    AngularIcalendarService
+    IcsParserService
   ],
   exports: []
 })
